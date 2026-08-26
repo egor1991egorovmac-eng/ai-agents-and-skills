@@ -6,20 +6,16 @@
 
 ## Установка через npx skills
 
-> Репозиторий приватный — используй SSH-URL (нужен настроенный SSH-ключ):
-> `npx skills add git@github.com:egor1991egorovmac-eng/ai-agents-and-skills.git -g`
-> Шорткат `owner/repo` ходит по HTTPS и в приватный репо не пустит без токена.
-
 ```bash
 # все скилы, интерактивно (выбор скилов и агентов)
-npx skills add git@github.com:egor1991egorovmac-eng/ai-agents-and-skills.git -g
+npx skills add egor1991egorovmac-eng/ai-agents-and-skills -g
 
 # только пайплайн bff
-npx skills add git@github.com:egor1991egorovmac-eng/ai-agents-and-skills.git -g \
+npx skills add egor1991egorovmac-eng/ai-agents-and-skills -g \
   --skill bff-pipeline-v2 --skill bff-pipeline-bff --skill bff-pipeline-client
 
 # только realt-flow
-npx skills add git@github.com:egor1991egorovmac-eng/ai-agents-and-skills.git -g --skill realt-flow
+npx skills add egor1991egorovmac-eng/ai-agents-and-skills -g --skill realt-flow
 ```
 
 Каталог скилов в [`skills/`](skills/) — 10 штук: `bff-pipeline-v2` (дирижёр + runner),
