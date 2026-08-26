@@ -2,6 +2,8 @@
 
 Агенты и скилы для AI-кодинговых инструментов (Claude Code, OpenCode, Cursor).
 
+🔗 Страница: [ai-agents-and-skills.vercel.app](https://ai-agents-and-skills.vercel.app/)
+
 ## Установка через npx skills
 
 ```bash
