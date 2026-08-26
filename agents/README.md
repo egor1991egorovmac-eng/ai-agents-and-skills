@@ -2,7 +2,7 @@
 
 ## realt-flow
 
-Флоу REALT-фичи под ключ: сторя YouTrack → фича-ветка + draft-MR → таск-ветки → MR. Скрипты в [`realt-flow/scripts/`](realt-flow/scripts/), варианты: `claude-SKILL.md`, `opencode-agent.md`, `cursor-realt-flow.mdc`.
+Флоу REALT-фичи под ключ: сторя YouTrack → фича-ветка + draft-MR → таск-ветки → MR. Скил со скриптами: [`../skills/realt-flow/`](../skills/realt-flow/) (ставится через `npx skills add ... --skill realt-flow`). Здесь только варианты для агентов: `opencode-agent.md` → `~/.config/opencode/agent/realt-flow.md`, `cursor-realt-flow.mdc` → `~/.cursor/rules/realt-flow.mdc`; скрипты им нужны в `~/.config/opencode/scripts/realt-flow/` (`./install.sh --opencode`).
 
 ## bff-pipeline
 

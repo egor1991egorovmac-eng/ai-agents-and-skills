@@ -1,6 +1,6 @@
 ---
 name: bff-e2e-verify-v2
-description: Этап 4 пайплайна bff-pipeline — e2e проверка новой операции против BFF Target из workspace .env. Используй всегда, когда нужно проверить, что query/mutation реально работает, прогнать GraphQL-запрос против уже живого BFF — даже если пользователь говорит просто «проверь, что отдаёт бэк». V2: проверка через bff-pipeline runner.
+description: "Этап 4 пайплайна bff-pipeline — e2e проверка новой операции против BFF Target из workspace .env. Используй всегда, когда нужно проверить, что query/mutation реально работает, прогнать GraphQL-запрос против уже живого BFF — даже если пользователь говорит просто «проверь, что отдаёт бэк». V2: проверка через bff-pipeline runner."
 ---
 
 # BFF E2E Verify V2 — этап 4

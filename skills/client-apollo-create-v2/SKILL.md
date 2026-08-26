@@ -1,6 +1,6 @@
 ---
 name: client-apollo-create-v2
-description: Этап 6 пайплайна bff-pipeline — создание атомарных Apollo-файлов (query, mutation, fragment) в клиентских проектах mls, admin и www через createApolloQuery/createApolloMutation/createApolloFragment. Используй всегда, когда нужен новый apollo-запрос или мутация на клиенте, хук useQuery/useMutation под существующее поле схемы — даже если пользователь говорит просто «создай apollo query» или «добавь мутацию». V2: проверка через bff-pipeline runner.
+description: "Этап 6 пайплайна bff-pipeline — создание атомарных Apollo-файлов (query, mutation, fragment) в клиентских проектах mls, admin и www через createApolloQuery/createApolloMutation/createApolloFragment. Используй всегда, когда нужен новый apollo-запрос или мутация на клиенте, хук useQuery/useMutation под существующее поле схемы — даже если пользователь говорит просто «создай apollo query» или «добавь мутацию». V2: проверка через bff-pipeline runner."
 ---
 
 # Client Apollo Create V2 — этап 6

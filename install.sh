@@ -6,6 +6,7 @@ REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 CLAUDE_SKILLS="${HOME}/.claude/skills"
 CLAUDE_AGENTS="${HOME}/.claude/agents"
 OPENCODE_AGENT="${HOME}/.config/opencode/agent"
+OPENCODE_SCRIPTS="${HOME}/.config/opencode/scripts"
 CURSOR_RULES="${HOME}/.cursor/rules"
 
 AGENTS="bff-pipeline-bff bff-pipeline-client"
@@ -56,6 +57,9 @@ install_claude_skills() {
     cp "${REPO_DIR}/skills/${s}/SKILL.md" "${CLAUDE_SKILLS}/${s}/SKILL.md"
     ok "${s}"
   done
+  mkdir -p "${CLAUDE_SKILLS}/realt-flow"
+  cp "${REPO_DIR}/skills/realt-flow/SKILL.md" "${CLAUDE_SKILLS}/realt-flow/SKILL.md"
+  ok "realt-flow"
 }
 
 install_opencode() {
@@ -65,6 +69,14 @@ install_opencode() {
     cp "${REPO_DIR}/agents/${a}/opencode-agent.md" "${OPENCODE_AGENT}/${a}.md"
     ok "${a}"
   done
+  cp "${REPO_DIR}/agents/realt-flow/opencode-agent.md" "${OPENCODE_AGENT}/realt-flow.md"
+  ok "realt-flow"
+
+  info "OpenCode: скрипты realt-flow → ${OPENCODE_SCRIPTS}/realt-flow"
+  mkdir -p "${OPENCODE_SCRIPTS}"
+  rsync -a --delete --exclude .DS_Store --exclude .env.example \
+    "${REPO_DIR}/skills/realt-flow/scripts/" "${OPENCODE_SCRIPTS}/realt-flow/"
+  ok "$(ls "${OPENCODE_SCRIPTS}/realt-flow" | wc -l | tr -d ' ') файлов"
 }
 
 install_cursor() {
@@ -74,6 +86,8 @@ install_cursor() {
     cp "${REPO_DIR}/agents/${a}/cursor-${a}.mdc" "${CURSOR_RULES}/${a}.mdc"
     ok "${a}"
   done
+  cp "${REPO_DIR}/agents/realt-flow/cursor-realt-flow.mdc" "${CURSOR_RULES}/realt-flow.mdc"
+  ok "realt-flow"
 }
 
 verify_runner() {

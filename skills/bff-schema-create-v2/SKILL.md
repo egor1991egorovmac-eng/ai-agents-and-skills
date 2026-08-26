@@ -1,6 +1,6 @@
 ---
 name: bff-schema-create-v2
-description: Этап 1 пайплайна bff-pipeline — создание .gql схемы query/mutation в bff-mls (декларация в Query/Mutation, типы, input'ы, enum'ы). Используй всегда, когда нужно объявить новое поле GraphQL в BFF, создать .gql файл, описать типы ответа микросервиса — даже если пользователь просто говорит «добавь query в bff» или «опиши схему». V2: проверка через bff-pipeline runner.
+description: "Этап 1 пайплайна bff-pipeline — создание .gql схемы query/mutation в bff-mls (декларация в Query/Mutation, типы, input'ы, enum'ы). Используй всегда, когда нужно объявить новое поле GraphQL в BFF, создать .gql файл, описать типы ответа микросервиса — даже если пользователь просто говорит «добавь query в bff» или «опиши схему». V2: проверка через bff-pipeline runner."
 ---
 
 # BFF Schema Create V2 — этап 1

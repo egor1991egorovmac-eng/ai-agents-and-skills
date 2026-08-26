@@ -1,6 +1,6 @@
 ---
 name: bff-datasource-create-v2
-description: Этап 2 пайплайна bff-pipeline — создание/расширение DataSource к микросервису в bff-mls (src/data-sources). Используй всегда, когда нужно добавить метод обращения к микросервису API, новый DataSource, REST-эндпоинт в BFF — даже если пользователь говорит просто «добавь метод в апи» или «прокинь эндпоинт». V2: проверка через bff-pipeline runner.
+description: "Этап 2 пайплайна bff-pipeline — создание/расширение DataSource к микросервису в bff-mls (src/data-sources). Используй всегда, когда нужно добавить метод обращения к микросервису API, новый DataSource, REST-эндпоинт в BFF — даже если пользователь говорит просто «добавь метод в апи» или «прокинь эндпоинт». V2: проверка через bff-pipeline runner."
 ---
 
 # BFF DataSource Create V2 — этап 2

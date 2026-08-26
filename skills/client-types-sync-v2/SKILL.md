@@ -1,6 +1,6 @@
 ---
 name: client-types-sync-v2
-description: Этап 5 пайплайна bff-pipeline — синхронизация типов клиента (mls, admin, www) со схемой BFF через codegen. Используй всегда, когда в lib/graphql/types.ts не хватает типов для новой операции, нужно подтянуть свежую GraphQL-схему в клиент — даже если пользователь говорит просто «обнови типы» или «почему нет QueryXxxArgs». V2: проверка через bff-pipeline runner.
+description: "Этап 5 пайплайна bff-pipeline — синхронизация типов клиента (mls, admin, www) со схемой BFF через codegen. Используй всегда, когда в lib/graphql/types.ts не хватает типов для новой операции, нужно подтянуть свежую GraphQL-схему в клиент — даже если пользователь говорит просто «обнови типы» или «почему нет QueryXxxArgs». V2: проверка через bff-pipeline runner."
 ---
 
 # Client Types Sync V2 — этап 5

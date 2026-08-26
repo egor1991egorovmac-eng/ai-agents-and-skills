@@ -1,6 +1,6 @@
 ---
 name: bff-pipeline-v2
-description: Дирижёр сквозного bff-pipeline с детерминированным Node.js runner — единственный источник PASS/FAIL/BLOCKED для этапов 0–6. Триггеры: «bff-pipeline v2», «новая graphql фича под ключ», «runner pipeline», «gate проверка graphql фичи».
+description: "Дирижёр сквозного bff-pipeline с детерминированным Node.js runner — единственный источник PASS/FAIL/BLOCKED для этапов 0–6. Триггеры: «bff-pipeline v2», «новая graphql фича под ключ», «runner pipeline», «gate проверка graphql фичи»."
 ---
 
 # BFF Pipeline V2 — дирижёр с runner
