@@ -1,5 +1,11 @@
 # Agents
 
+## realt-flow
+
+Флоу REALT-фичи под ключ: сторя YouTrack → фича-ветка + draft-MR → таск-ветки → MR. Скрипты в [`realt-flow/scripts/`](realt-flow/scripts/), варианты: `claude-SKILL.md`, `opencode-agent.md`, `cursor-realt-flow.mdc`.
+
+## bff-pipeline
+
 Агенты пайплайна bff-pipeline-v2, разбитые на BFF- и client-стороны. Runner: `~/.claude/skills/bff-pipeline-v2/scripts/bff-pipeline.mjs`.
 
 | Агент | Этапы | Stage skills |
