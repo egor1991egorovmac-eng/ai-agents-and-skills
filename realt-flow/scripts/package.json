@@ -1,0 +1,9 @@
+{
+  "name": "realt-flow",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check-env": "bun run check-env.ts"
+  }
+}
