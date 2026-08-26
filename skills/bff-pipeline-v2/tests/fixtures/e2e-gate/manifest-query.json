@@ -1,0 +1,22 @@
+{
+  "operation": "demoListing",
+  "kind": "query",
+  "domain": "demo",
+  "stack": "bff-admin",
+  "service": "demo",
+  "endpoint": "/demo/listing",
+  "apiResponseType": "DemoItem",
+  "httpMethod": "POST",
+  "datasourceMethod": "getDemoListing",
+  "e2eQuery": "query demoListing($data: DemoListingInput!) { demoListing(data: $data) { results { uuid } pagination { totalCount } } }",
+  "e2eVariables": {
+    "data": {
+      "page": 1,
+      "pageSize": 10
+    }
+  },
+  "assertions": [
+    { "id": "results-present", "path": "data.demoListing.results", "notEmpty": true },
+    { "id": "total-count", "path": "data.demoListing.pagination.totalCount", "type": "number" }
+  ]
+}

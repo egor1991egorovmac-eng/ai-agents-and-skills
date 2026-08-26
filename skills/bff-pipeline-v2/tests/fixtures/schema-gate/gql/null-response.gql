@@ -1,0 +1,7 @@
+extend type Mutation {
+  demoArchive(data: DemoArchiveInput!): NullResponse!
+}
+
+input DemoArchiveInput {
+  uuid: UUID!
+}

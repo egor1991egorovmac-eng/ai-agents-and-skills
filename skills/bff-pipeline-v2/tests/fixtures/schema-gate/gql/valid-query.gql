@@ -1,0 +1,17 @@
+extend type Query {
+  demoListing(data: DemoListingInput!): DemoListingResponse!
+}
+
+input DemoListingInput {
+  pagination: Pagination!
+}
+
+type DemoListingResponse {
+  results: [DemoItem!]!
+}
+
+type DemoItem {
+  uuid: UUID!
+  title: String!
+  count: Int!
+}

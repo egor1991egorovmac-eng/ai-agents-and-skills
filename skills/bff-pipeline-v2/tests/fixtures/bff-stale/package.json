@@ -1,0 +1,5 @@
+{
+  "devDependencies": {
+    "@realt-by/api-schema": "git+ssh://git@gitlab.realt.by/backend/libs/lib-schema#1.0.0"
+  }
+}

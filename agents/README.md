@@ -6,7 +6,21 @@
 
 ## bff-pipeline
 
-Агенты пайплайна bff-pipeline-v2, разбитые на BFF- и client-стороны. Runner: `~/.claude/skills/bff-pipeline-v2/scripts/bff-pipeline.mjs`.
+Агенты пайплайна bff-pipeline-v2, разбитые на BFF- и client-стороны.
+
+Связанные скилы в [`../skills/`](../skills/):
+
+| Скил | Что это |
+|---|---|
+| [`bff-pipeline-v2`](../skills/bff-pipeline-v2/) | Дирижёр + runner (`scripts/bff-pipeline.mjs`) — единственный источник PASS/FAIL/BLOCKED |
+| [`bff-schema-create-v2`](../skills/bff-schema-create-v2/) | Этап 1 — .gql схема |
+| [`bff-datasource-create-v2`](../skills/bff-datasource-create-v2/) | Этап 2 — DataSource |
+| [`bff-resolver-create-v2`](../skills/bff-resolver-create-v2/) | Этап 3 — резолвер (+ трансформер) |
+| [`bff-e2e-verify-v2`](../skills/bff-e2e-verify-v2/) | Этап 4 — e2e против BFF Target |
+| [`client-types-sync-v2`](../skills/client-types-sync-v2/) | Этап 5 — codegen типов клиента |
+| [`client-apollo-create-v2`](../skills/client-apollo-create-v2/) | Этап 6 — Apollo query/mutation файлы |
+
+Runner: `~/.claude/skills/bff-pipeline-v2/scripts/bff-pipeline.mjs` (локальная копия — `skills/bff-pipeline-v2/scripts/`).
 
 | Агент | Этапы | Stage skills |
 |---|---|---|

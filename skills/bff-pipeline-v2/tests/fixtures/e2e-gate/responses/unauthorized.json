@@ -1,0 +1,31 @@
+{
+  "data": null,
+  "errors": [
+    {
+      "message": "Ошибка из микроса",
+      "path": ["adminRolesListing"],
+      "extensions": {
+        "errors": [
+          {
+            "code": 401,
+            "errorCode": "common.unauthorized",
+            "title": null,
+            "message": "Пользователь не авторизован",
+            "field": null,
+            "params": []
+          }
+        ]
+      },
+      "errors": [
+        {
+          "code": 401,
+          "errorCode": "common.unauthorized",
+          "title": null,
+          "message": "Пользователь не авторизован",
+          "field": null,
+          "params": []
+        }
+      ]
+    }
+  ]
+}

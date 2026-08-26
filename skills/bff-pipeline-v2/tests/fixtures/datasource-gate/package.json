@@ -1,0 +1,7 @@
+{
+  "name": "bff-datasource-gate-fixture",
+  "private": true,
+  "scripts": {
+    "type-check": "node -e \"process.exit(0)\""
+  }
+}

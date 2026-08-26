@@ -1,0 +1,8 @@
+{
+  "data": {
+    "demoListing": {
+      "results": [{ "uuid": "11111111-1111-1111-1111-111111111111" }],
+      "pagination": { "totalCount": 1 }
+    }
+  }
+}

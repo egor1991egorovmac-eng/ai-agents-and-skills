@@ -1,0 +1,7 @@
+{
+  "name": "client-codegen-fixture",
+  "private": true,
+  "scripts": {
+    "codegen": "node -e \"console.log('codegen ok')\""
+  }
+}

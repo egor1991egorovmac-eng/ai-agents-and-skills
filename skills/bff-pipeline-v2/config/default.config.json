@@ -1,0 +1,21 @@
+{
+  "projects": {
+    "bffMls": "/Users/egor1991egorovmacgmail.com/Documents/work/mls-project/bff-mls",
+    "bffAdmin": "/Users/egor1991egorovmacgmail.com/Documents/work/admin-project/bff-admin",
+    "bffWww": "/Users/egor1991egorovmacgmail.com/Documents/work/www-project/bff",
+    "mls": "/Users/egor1991egorovmacgmail.com/Documents/work/mls-project/mls",
+    "admin": "/Users/egor1991egorovmacgmail.com/Documents/work/admin-project/admin",
+    "www": "/Users/egor1991egorovmacgmail.com/Documents/work/www-project/www/apps/main",
+    "graphifyVault": "/Users/egor1991egorovmacgmail.com/Documents/Obsidian Vault/Работа"
+  },
+  "timeouts": {
+    "default": 120000,
+    "gitRemote": 30000,
+    "npmInstall": 600000,
+    "bffDev": 120000,
+    "e2e": 60000,
+    "graphifyUpdate": 300000
+  },
+  "runsDir": "~/.bff-pipeline/runs",
+  "libSchemaRemote": "git@gitlab.realt.by:backend/libs/lib-schema.git"
+}

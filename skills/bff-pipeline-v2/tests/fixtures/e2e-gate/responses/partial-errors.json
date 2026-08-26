@@ -1,0 +1,8 @@
+{
+  "data": {
+    "demoListing": {
+      "results": null
+    }
+  },
+  "errors": [{ "message": "field failed", "path": ["demoListing", "results"] }]
+}

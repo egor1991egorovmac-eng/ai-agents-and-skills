@@ -1,0 +1,21 @@
+{
+  "operation": "demoArchive",
+  "kind": "mutation",
+  "domain": "demo",
+  "stack": "bff-admin",
+  "service": "demo",
+  "endpoint": "/demo/archive",
+  "apiResponseType": "DemoItem",
+  "httpMethod": "POST",
+  "datasourceMethod": "archiveDemo",
+  "idempotencyKey": "demo-archive-test-key",
+  "e2eQuery": "mutation demoArchive($data: DemoArchiveInput!) { demoArchive(data: $data) }",
+  "e2eVariables": {
+    "data": {
+      "uuid": "11111111-1111-1111-1111-111111111111"
+    }
+  },
+  "assertions": [
+    { "id": "mutation-result", "path": "data.demoArchive", "equals": true }
+  ]
+}

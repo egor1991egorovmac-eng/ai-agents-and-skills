@@ -1,0 +1,18 @@
+{
+  "operation": "workStatusCreate",
+  "kind": "mutation",
+  "domain": "work-statuses",
+  "stack": "bff-admin",
+  "client": "admin",
+  "service": "work-statuses",
+  "endpoint": "/work-statuses",
+  "apiResponseType": "WorkStatus",
+  "httpMethod": "POST",
+  "datasourceMethod": "createWorkStatus",
+  "e2eQuery": "mutation workStatusCreate($data: InputWorkStatusCreate!) { workStatusCreate(data: $data) }",
+  "e2eVariables": { "data": { "title": "test" } },
+  "assertions": [{ "id": "ok", "path": "data.workStatusCreate", "exists": true }],
+  "expectedTypes": ["MutationWorkStatusCreateArgs", "InputWorkStatusCreate"],
+  "apolloPath": "src/features/work-statuses/apollo/apollo-work-statuses-create-work-status.mutation.ts",
+  "hookName": "useApolloWorkStatusesCreateWorkStatusMutation"
+}
