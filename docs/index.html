@@ -406,7 +406,7 @@ footer a:hover { text-decoration: underline; }
       <b>realt-flow</b> доводит сторю от YouTrack до готовых MR без ручного git и glab.</p>
       <div class="cmd-row">
         <span class="dollar">$</span>
-        <code id="install-cmd">npx skills add egor1991egorovmac-eng/ai-agents-and-skills -g</code>
+        <code id="install-cmd">npx skills add git@github.com:egor1991egorovmac-eng/ai-agents-and-skills.git -g</code>
         <button class="copy-btn" type="button" data-copy="install-cmd">Копировать</button>
       </div>
     </section>
@@ -477,19 +477,19 @@ footer a:hover { text-decoration: underline; }
       <div class="sec-head"><span class="idx">ФИГ. 4</span><h2>Установка</h2></div>
       <div class="install-block">
 <span class="comment"># дирижёр + runner</span><br>
-<span class="hl">npx skills add</span> egor1991egorovmac-eng/ai-agents-and-skills -g --skill bff-pipeline-v2<br>
+<span class="hl">npx skills add</span> git@github.com:egor1991egorovmac-eng/ai-agents-and-skills.git -g --skill bff-pipeline-v2<br>
 <br>
 <span class="comment"># агент BFF-стороны (этапы 0–4)</span><br>
-<span class="hl">npx skills add</span> egor1991egorovmac-eng/ai-agents-and-skills -g --skill bff-pipeline-bff<br>
+<span class="hl">npx skills add</span> git@github.com:egor1991egorovmac-eng/ai-agents-and-skills.git -g --skill bff-pipeline-bff<br>
 <br>
 <span class="comment"># агент клиентской стороны (этапы 5–6)</span><br>
-<span class="hl">npx skills add</span> egor1991egorovmac-eng/ai-agents-and-skills -g --skill bff-pipeline-client<br>
+<span class="hl">npx skills add</span> git@github.com:egor1991egorovmac-eng/ai-agents-and-skills.git -g --skill bff-pipeline-client<br>
 <br>
 <span class="comment"># realt-flow: сторя → фича-ветка → таск-ветки → MR</span><br>
-<span class="hl">npx skills add</span> egor1991egorovmac-eng/ai-agents-and-skills -g --skill realt-flow<br>
+<span class="hl">npx skills add</span> git@github.com:egor1991egorovmac-eng/ai-agents-and-skills.git -g --skill realt-flow<br>
 <br>
 <span class="comment"># stage-скилы этапов 1–6 — одной командой</span><br>
-<span class="hl">npx skills add</span> egor1991egorovmac-eng/ai-agents-and-skills -g \<br>
+<span class="hl">npx skills add</span> git@github.com:egor1991egorovmac-eng/ai-agents-and-skills.git -g \<br>
 &nbsp;&nbsp;--skill bff-schema-create-v2 --skill bff-datasource-create-v2 --skill bff-resolver-create-v2 \<br>
 &nbsp;&nbsp;--skill bff-e2e-verify-v2 --skill client-types-sync-v2 --skill client-apollo-create-v2
       </div>
