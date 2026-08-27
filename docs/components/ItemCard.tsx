@@ -33,7 +33,7 @@ export function ItemCard({ item }: { item: RegistryItem }) {
       </div>
 
       <p className="min-w-0 flex-1 text-[14px] leading-5 text-basic-300 md:flex-[2]">
-        {item.description}
+        {item.summary}
       </p>
 
       <div className="flex shrink-0 items-center justify-between gap-4 border-t border-basic-100/10 pt-2 md:border-t-0 md:pt-0">

@@ -8,6 +8,39 @@ const REPO_ROOT = path.resolve(APP_ROOT, '..');
 const OUT = path.join(APP_ROOT, 'data', 'registry.json');
 const OWNER_REPO = 'egor1991egorovmac-eng/ai-agents-and-skills';
 
+const SUMMARIES = {
+  'bff-datasource-create-v2':
+    'Этап 2 пайплайна bff-pipeline: метод обращения к микросервису — новый DataSource или REST-эндпоинт в bff-mls.',
+  'bff-e2e-verify-v2':
+    'Этап 4: проверка новой операции реальным запросом к BFF — прогнать GraphQL против живого сервиса.',
+  'bff-pipeline-bff':
+    'Агент BFF-стороны: ведёт GraphQL-фичу по этапам 0–4 — preflight, схема, DataSource, резолвер, e2e.',
+  'bff-pipeline-client':
+    'Агент клиентской стороны: этапы 5–6 — codegen типов и Apollo-файлы с gate-проверками runner.',
+  'bff-pipeline-v2':
+    'Дирижёр пайплайна с детерминированным runner — единственный источник PASS/FAIL/BLOCKED на этапах 0–6.',
+  'bff-resolver-create-v2':
+    'Этап 3: резолвер и трансформер в bff-mls, регистрация в resolvers.ts.',
+  'bff-schema-create-v2':
+    'Этап 1: .gql схема query/mutation в bff-mls — типы, input\u2019ы, enum\u2019ы.',
+  'client-apollo-create-v2':
+    'Этап 6: атомарные Apollo query/mutation/fragment файлы в mls, admin и www.',
+  'client-types-sync-v2':
+    'Этап 5: синхронизация типов клиента со схемой BFF через codegen.',
+  'realt-flow':
+    'Флоу задачи целиком: сторя YouTrack → фича-ветка → таск-ветки → MR. Всю механику делают скрипты.',
+};
+
+function cleanDescription(description) {
+  const withoutExamples = description.split('Examples')[0];
+
+  return withoutExamples
+    .replace(/["«»]/g, '')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .slice(0, 200);
+}
+
 function parseFrontmatter(filePath) {
   const raw = fs.readFileSync(filePath, 'utf8');
 
@@ -152,6 +185,7 @@ const registry = [...byId.values()].map((item) => ({
   alsoSkill: item.alsoSkill,
   name: item.name,
   description: item.description,
+  summary: SUMMARIES[item.id] ?? cleanDescription(item.description),
   install: `npx skills add ${OWNER_REPO} -g --skill ${item.id}`,
   source: item.source,
   body: item.body,

@@ -8,6 +8,7 @@ export interface RegistryItem {
   alsoSkill: boolean;
   name: string;
   description: string;
+  summary: string;
   install: string;
   source: string;
   body: string;

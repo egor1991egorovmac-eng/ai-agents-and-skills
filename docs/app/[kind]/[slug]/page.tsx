@@ -88,7 +88,7 @@ export default async function DetailPage({ params }: Props) {
             <h2 className="mb-2 w-full font-display text-[20px] font-bold leading-[26px]">
               Описание
             </h2>
-            <p className="text-[16px] leading-6 text-basic-300">{item.description}</p>
+            <p className="text-[16px] leading-6 text-basic-300">{item.summary}</p>
           </section>
 
           <section className="mb-4 rounded-md bg-card p-4 lg:p-6">
