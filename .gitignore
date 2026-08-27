@@ -1,0 +1,8 @@
+.next
+node_modules
+out
+tsconfig.tsbuildinfo
+docs/.next
+docs/node_modules
+docs/out
+docs/tsconfig.tsbuildinfo
