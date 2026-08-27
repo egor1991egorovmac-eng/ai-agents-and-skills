@@ -54,7 +54,7 @@ body {
 a:focus-visible,
 button:focus-visible,
 input:focus-visible {
-  outline: 2px solid var(--color-primary);
+  outline: 2px solid var(--color-basic-400);
   outline-offset: 2px;
 }
 
