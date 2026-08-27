@@ -6,17 +6,18 @@
 
 ## Сайт
 
-Next.js (SSG, `output: export`) в корне репо: главная со списком и поиском по названию,
-у каждого агента/скила своя страница с полным текстом SKILL.md.
+Next.js (SSG, `output: export`) в папке [`docs/`](docs/): главная со списком и поиском по названию,
+у каждого агента/скила своя страница с полным текстом SKILL.md. Vercel деплоит из `docs/`.
 
 ```bash
+cd docs
 npm run dev     # локальная разработка
 npm run sync    # пересобрать data/registry.json из frontmatter SKILL.md
 npm run build   # SSG-сборка в out/
 ```
 
-Данные сайта — `data/registry.json`, генерируется из `skills/*/SKILL.md` и `agents/*/claude-agent.md`
-(script: `scripts/sync-registry.mjs`). Новый скил = папка `skills/<name>/SKILL.md` → появится на сайте
+Данные сайта — `docs/data/registry.json`, генерируется из `skills/*/SKILL.md` и `agents/*/claude-agent.md`
+(script: `docs/scripts/sync-registry.mjs`). Новый скил = папка `skills/<name>/SKILL.md` → появится на сайте
 после `npm run sync`. Деплой на Vercel — автоматически при пуше.
 
 ## Установка через npx skills
