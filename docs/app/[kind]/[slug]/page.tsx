@@ -48,13 +48,13 @@ export default async function DetailPage({ params }: Props) {
   return (
     <div className="pb-10 pt-4 md:pt-8">
       <nav aria-label="Хлебные крошки" className="mb-2 flex flex-wrap items-center text-[14px]">
-        <a href="/" className="text-basic-400 transition-colors hover:text-info-300">
+        <a href="/" className="text-basic-300 transition-colors hover:text-info-300">
           Каталог
         </a>
         <span className="mx-2 text-[11px] text-basic-800">›</span>
-        <span className="text-basic-400">{kind === 'skill' ? 'Скилы' : 'Агенты'}</span>
+        <span className="text-basic-300">{kind === 'skill' ? 'Скилы' : 'Агенты'}</span>
         <span className="mx-2 text-[11px] text-basic-800">›</span>
-        <span className="text-basic-400">{item.name}</span>
+        <span className="text-basic-300">{item.name}</span>
       </nav>
 
       <div className="flex flex-wrap">
@@ -70,7 +70,7 @@ export default async function DetailPage({ params }: Props) {
               >
                 {badgeLabel}
               </span>
-              <span className="text-[12px] text-basic-400">{item.source}</span>
+              <span className="text-[12px] text-basic-300">{item.source}</span>
             </div>
 
             <h1 className="mt-3 font-display text-[26px] font-extrabold leading-[32px] lg:text-[32px] lg:leading-[38px]">
@@ -119,7 +119,7 @@ export default async function DetailPage({ params }: Props) {
             <h2 className="font-display text-[22px] font-extrabold leading-[28px]">
               {item.install.split('--skill ')[1]}
             </h2>
-            <p className="mt-0.5 text-[14px] text-basic-400">команда установки</p>
+            <p className="mt-0.5 text-[14px] text-basic-300">команда установки</p>
 
             <div className="mt-4">
               <InstallBlock command={item.install} />
@@ -135,7 +135,7 @@ export default async function DetailPage({ params }: Props) {
             </a>
 
             <div className="mt-4 border-t border-basic-100/10 pt-4">
-              <p className="text-[12px] text-basic-400">Форматы</p>
+              <p className="text-[12px] text-basic-300">Форматы</p>
               <div className="mt-2 flex flex-wrap gap-2">
                 <span className="rounded-full bg-basic-800 px-2.5 py-1 text-[12px] text-basic-300">
                   Claude Code
@@ -149,7 +149,7 @@ export default async function DetailPage({ params }: Props) {
               </div>
             </div>
 
-            <div className="mt-4 border-t border-basic-100/10 pt-4 text-[12px] leading-4 text-basic-400">
+            <div className="mt-4 border-t border-basic-100/10 pt-4 text-[12px] leading-4 text-basic-300">
               Устанавливается через npx skills отдельной командой на каждого агента или скила.
             </div>
           </div>

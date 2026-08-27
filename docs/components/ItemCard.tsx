@@ -32,12 +32,12 @@ export function ItemCard({ item }: { item: RegistryItem }) {
         <KindBadge item={item} />
       </div>
 
-      <p className="min-w-0 flex-1 text-[14px] leading-5 text-basic-400 md:flex-[2]">
+      <p className="min-w-0 flex-1 text-[14px] leading-5 text-basic-300 md:flex-[2]">
         {item.description}
       </p>
 
       <div className="flex shrink-0 items-center justify-between gap-4 border-t border-basic-100/10 pt-2 md:border-t-0 md:pt-0">
-        <span className="font-mono text-[12px] text-basic-400">
+        <span className="font-mono text-[12px] text-basic-300">
           {item.kind === 'agent' ? 'этапы 0–6' : 'npx skills'}
         </span>
         <span className="font-mono text-[12px] font-semibold uppercase tracking-wide text-info-300 opacity-0 transition-opacity group-hover:opacity-100">

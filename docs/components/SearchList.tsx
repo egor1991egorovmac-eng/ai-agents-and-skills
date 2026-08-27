@@ -72,7 +72,7 @@ export function SearchList({ items }: { items: RegistryItem[] }) {
           onChange={(event) => setQuery(event.target.value)}
           placeholder="Поиск агента или скила по названию…"
           aria-label="Поиск по названию"
-          className="w-full bg-transparent text-[15px] text-ink outline-none placeholder:text-basic-400"
+          className="w-full bg-transparent text-[15px] text-ink outline-none placeholder:text-basic-300"
         />
       </div>
 
@@ -98,7 +98,7 @@ export function SearchList({ items }: { items: RegistryItem[] }) {
       {empty ? (
         <div className="mt-6 rounded-md border border-basic-100/10 bg-card p-8 text-center">
           <p className="font-display text-lg font-bold">Ничего не найдено</p>
-          <p className="mt-1 text-[14px] text-basic-400">
+          <p className="mt-1 text-[14px] text-basic-300">
             По запросу «{query.trim()}» нет совпадений. Попробуй другое название.
           </p>
         </div>

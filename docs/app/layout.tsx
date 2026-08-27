@@ -52,7 +52,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                 href="https://github.com/egor1991egorovmac-eng/ai-agents-and-skills"
                 target="_blank"
                 rel="noreferrer"
-                className="hidden font-mono text-[13px] text-basic-400 transition-colors hover:text-info-300 sm:block"
+                className="hidden font-mono text-[13px] text-basic-300 transition-colors hover:text-info-300 sm:block"
               >
                 github.com/egor1991egorovmac-eng/ai-agents-and-skills
               </a>
