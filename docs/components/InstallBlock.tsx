@@ -17,7 +17,7 @@ export function InstallBlock({ command }: { command: string }) {
 
   return (
     <div>
-      <div className="overflow-x-auto rounded-md border border-basic-100/10 bg-footer px-4 py-3 font-mono text-[13px] text-basic-300">
+      <div className="overflow-x-auto rounded-md border border-basic-100/10 bg-preview-b px-4 py-3 font-mono text-[13px] text-ink">
         <span className="select-none text-primary">$</span> {command}
       </div>
       <button

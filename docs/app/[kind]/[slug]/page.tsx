@@ -77,7 +77,7 @@ export default async function DetailPage({ params }: Props) {
               {item.name}
             </h1>
 
-            <div className="mt-4 flex aspect-[400/235] items-center justify-center overflow-hidden rounded-md bg-gradient-to-br from-[#262b33] to-[#1a1e24]">
+            <div className="mt-4 flex aspect-[400/235] items-center justify-center overflow-hidden rounded-md bg-gradient-to-br from-preview-a to-preview-b">
               <span className="font-mono text-[64px] font-semibold text-basic-400/50 lg:text-[96px]">
                 {item.id}
               </span>
