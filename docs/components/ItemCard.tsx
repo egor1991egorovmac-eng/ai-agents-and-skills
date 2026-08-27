@@ -23,34 +23,26 @@ export function ItemCard({ item }: { item: RegistryItem }) {
   return (
     <a
       href={href}
-      className="group flex flex-col overflow-hidden rounded-md border border-basic-100/10 bg-card transition-all hover:-translate-y-0.5 hover:border-basic-100/20 hover:shadow-[0_5px_10px_rgba(91,100,115,0.18)]"
+      className="group flex w-full flex-col gap-2 rounded-md border border-basic-100/10 bg-card p-4 transition-all hover:border-basic-100/20 hover:bg-card-hover hover:shadow-[0_5px_10px_rgba(91,100,115,0.18)] md:flex-row md:items-center md:gap-5 md:px-5"
     >
-      <div className="relative flex aspect-[400/235] items-center justify-center overflow-hidden rounded-t-md bg-gradient-to-br from-[#262b33] to-[#1a1e24]">
-        <span className="font-mono text-[44px] font-semibold text-basic-400/60 transition-colors group-hover:text-primary/70">
-          {item.id.slice(0, 2)}
-        </span>
-        <span className="absolute left-3 top-3">
-          <KindBadge item={item} />
-        </span>
+      <div className="flex min-w-0 flex-1 items-center gap-3">
+        <h3 className="shrink-0 font-display text-[17px] font-bold leading-snug text-ink">
+          {item.name}
+        </h3>
+        <KindBadge item={item} />
       </div>
 
-      <div className="flex flex-1 flex-col p-4">
-        <div className="flex items-baseline justify-between gap-2">
-          <h3 className="font-display text-[17px] font-bold leading-snug text-ink">
-            {item.name}
-          </h3>
-        </div>
-        <p className="mt-1.5 line-clamp-2 text-[14px] leading-5 text-basic-400">
-          {item.description}
-        </p>
-        <div className="mt-3 flex items-center justify-between border-t border-basic-100/10 pt-3">
-          <span className="font-mono text-[12px] text-basic-400">
-            {item.kind === 'agent' ? 'этапы 0–6' : 'npx skills'}
-          </span>
-          <span className="font-mono text-[12px] font-semibold uppercase tracking-wide text-info-300 opacity-0 transition-opacity group-hover:opacity-100">
-            открыть →
-          </span>
-        </div>
+      <p className="min-w-0 flex-1 text-[14px] leading-5 text-basic-400 md:flex-[2]">
+        {item.description}
+      </p>
+
+      <div className="flex shrink-0 items-center justify-between gap-4 border-t border-basic-100/10 pt-2 md:border-t-0 md:pt-0">
+        <span className="font-mono text-[12px] text-basic-400">
+          {item.kind === 'agent' ? 'этапы 0–6' : 'npx skills'}
+        </span>
+        <span className="font-mono text-[12px] font-semibold uppercase tracking-wide text-info-300 opacity-0 transition-opacity group-hover:opacity-100">
+          открыть →
+        </span>
       </div>
     </a>
   );

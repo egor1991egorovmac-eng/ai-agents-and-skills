@@ -40,7 +40,7 @@ export function SearchList({ items }: { items: RegistryItem[] }) {
           </p>
         </div>
       ) : (
-        <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
+        <div className="mt-4 flex flex-col gap-4">
           {filtered.map((item) => (
             <ItemCard key={item.id} item={item} />
           ))}
