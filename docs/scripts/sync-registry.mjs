@@ -26,7 +26,7 @@ function parseFrontmatter(filePath) {
   const nameMatch = fm.match(/^name:\s*(.+)$/m);
   const descMatch = fm.match(/^description:\s*(.*)$/m);
 
-  if (!nameMatch || !descMatch) {
+  if (!descMatch) {
     return null;
   }
 
@@ -41,7 +41,7 @@ function parseFrontmatter(filePath) {
   };
 
   return {
-    name: unquote(nameMatch[1]),
+    name: nameMatch ? unquote(nameMatch[1]) : null,
     description: unquote(descMatch[1]),
     body: raw.slice(end + 4).trim(),
   };
@@ -85,31 +85,36 @@ function collectSkills() {
 function collectAgents() {
   const dir = path.join(REPO_ROOT, 'agents');
   const items = [];
+  const AGENT_FILES = ['claude-agent.md', 'opencode-agent.md'];
 
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
     if (!entry.isDirectory()) {
       continue;
     }
 
-    const filePath = path.join(dir, entry.name, 'claude-agent.md');
+    const agentFile = AGENT_FILES.map((name) => path.join(dir, entry.name, name)).find(
+      (filePath) => fs.existsSync(filePath)
+    );
 
-    if (!fs.existsSync(filePath)) {
+    if (!agentFile) {
       continue;
     }
 
-    const fm = parseFrontmatter(filePath);
+    const fm = parseFrontmatter(agentFile);
 
     if (!fm) {
-      console.warn(`skip: invalid frontmatter in ${filePath}`);
+      console.warn(`skip: invalid frontmatter in ${agentFile}`);
       continue;
     }
 
+    const id = fm.name ?? entry.name;
+
     items.push({
-      id: fm.name,
+      id,
       kind: 'agent',
-      name: fm.name,
+      name: id,
       description: fm.description,
-      source: path.relative(REPO_ROOT, filePath),
+      source: path.relative(REPO_ROOT, agentFile),
       body: fm.body,
     });
   }
