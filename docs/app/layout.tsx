@@ -6,7 +6,7 @@ import './globals.css';
 export const metadata: Metadata = {
   title: 'ai-agents-and-skills — агенты и скилы',
   description:
-    'Два агента и десять скилов на каждый день: bff-pipeline-bff, bff-pipeline-client, realt-flow и stage-скилы для Claude Code, OpenCode, Cursor.',
+    'Два агента и десять скилов: bff-pipeline-bff, bff-pipeline-client, realt-flow и stage-скилы для Claude Code, OpenCode, Cursor.',
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
@@ -16,39 +16,53 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Raleway:wght@700;800&family=JetBrains+Mono:wght@400;600&display=swap"
           rel="stylesheet"
         />
       </head>
       <body className="min-h-screen">
-        <div className="m-3.5 min-h-[calc(100vh-28px)] border border-white/20 outline outline-1 outline-white/5 outline-offset-[5px]">
-          <header className="flex flex-wrap justify-between border-b border-white/20 font-mono text-xs uppercase tracking-wider text-ink-dim">
-            <div className="border-r border-white/20 px-6 py-3.5">
-              <strong className="block font-display text-[15px] font-semibold tracking-wide normal-case text-ink">
-                AI-AGENTS-AND-SKILLS
-              </strong>
-              агенты и скилы · Realt frontend
-            </div>
-            <div className="ml-auto px-6 py-3.5 text-right">REV main<br />SHEET 1 OF 1</div>
-          </header>
-
-          <main>{children}</main>
-
-          <footer className="mt-auto border-t border-white/20">
-            <div className="flex flex-wrap justify-between gap-4 px-6 py-4.5 font-mono text-xs tracking-wider text-ink-dim">
-              <span>
-                github.com/
-                <a
-                  className="text-cyan hover:underline"
-                  href="https://github.com/egor1991egorovmac-eng/ai-agents-and-skills"
-                >
-                  egor1991egorovmac-eng/ai-agents-and-skills
-                </a>
+        <header className="border-b border-basic-100/10 bg-card shadow-[0_5px_10px_rgba(91,100,115,0.12)]">
+          <div className="mx-auto flex max-w-screen-xl items-center justify-between px-6 py-4 lg:px-[38px]">
+            <a href="/" className="flex items-center gap-2.5">
+              <span className="grid size-9 place-items-center rounded-md bg-primary font-mono text-sm font-semibold text-basic-900">
+                A
               </span>
-              <span>SSG · Next.js · Tailwind</span>
+              <span className="font-display text-lg font-extrabold leading-none">
+                AI-AGENTS<span className="text-primary">&</span>SKILLS
+              </span>
+            </a>
+            <a
+              href="https://github.com/egor1991egorovmac-eng/ai-agents-and-skills"
+              target="_blank"
+              rel="noreferrer"
+              className="hidden font-mono text-[13px] text-basic-400 transition-colors hover:text-info-300 sm:block"
+            >
+              github.com/egor1991egorovmac-eng/ai-agents-and-skills
+            </a>
+          </div>
+        </header>
+
+        <main className="mx-auto max-w-screen-xl px-6 lg:px-[38px]">{children}</main>
+
+        <footer className="mt-10 bg-footer">
+          <div className="mx-auto max-w-screen-xl px-6 py-6 lg:px-[38px]">
+            <div className="flex flex-wrap items-center justify-between gap-4 border-b border-basic-800 pb-4 text-[13px] text-basic-400">
+              <span>
+                Скилы и агенты для Claude Code · OpenCode · Cursor. SSG на Next.js.
+              </span>
+              <span className="font-mono">REV main · SHEET 1 OF 1</span>
             </div>
-          </footer>
-        </div>
+            <div className="flex flex-wrap justify-between gap-3 pt-4 text-[12px] text-basic-400">
+              <span>© {new Date().getFullYear()} ai-agents-and-skills</span>
+              <span>
+                Установка:{' '}
+                <code className="text-basic-300">
+                  npx skills add egor1991egorovmac-eng/ai-agents-and-skills -g
+                </code>
+              </span>
+            </div>
+          </div>
+        </footer>
       </body>
     </html>
   );

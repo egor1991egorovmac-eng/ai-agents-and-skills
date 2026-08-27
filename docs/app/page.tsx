@@ -11,29 +11,23 @@ export default function HomePage() {
   const items = loadRegistry();
 
   return (
-    <div className="px-6 py-10">
-      <section className="pb-8">
-        <p className="font-mono text-[13px] uppercase tracking-[0.14em] text-cyan">
-          Claude Code · OpenCode · Cursor
-        </p>
-        <h1 className="mt-3 max-w-[18ch] font-display text-[clamp(26px,5vw,44px)] font-normal leading-tight">
-          Два агента и десять скилов на каждый день
-        </h1>
-        <p className="mt-3 max-w-[60ch] text-ink-dim">
-          <b className="text-ink">bff-pipeline-bff</b> и{' '}
-          <b className="text-ink">bff-pipeline-client</b> ведут GraphQL-фичу по этапам 0–6,
-          <b className="text-ink"> realt-flow</b> доводит сторю от YouTrack до готовых MR. Ставятся
-          отдельной командой на каждого.
-        </p>
-      </section>
+    <div className="pb-10 pt-4 md:pt-8">
+      <nav aria-label="Хлебные крошки" className="mb-2 flex flex-wrap items-center text-[14px]">
+        <span className="text-basic-400">Каталог</span>
+        <span className="mx-2 text-[11px] text-basic-800">›</span>
+        <span className="text-basic-400">Агенты и скилы</span>
+      </nav>
 
-      <section>
-        <div className="mb-4 flex items-baseline gap-3">
-          <h2 className="whitespace-nowrap font-display text-lg">Каталог</h2>
-          <span className="h-px flex-1 bg-white/20" />
-        </div>
-        <SearchList items={items} />
-      </section>
+      <div className="mb-6 flex flex-wrap items-end justify-between gap-3">
+        <h1 className="font-display text-[26px] font-extrabold leading-[32px] lg:text-[32px]">
+          Агенты и скилы
+        </h1>
+        <span className="mb-1 font-mono text-[13px] text-basic-400">
+          {items.length} позиций · Claude Code · OpenCode · Cursor
+        </span>
+      </div>
+
+      <SearchList items={items} />
     </div>
   );
 }

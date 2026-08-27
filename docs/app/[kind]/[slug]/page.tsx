@@ -36,42 +36,124 @@ export default async function DetailPage({ params }: Props) {
   }
 
   const sourceUrl = `https://github.com/egor1991egorovmac-eng/ai-agents-and-skills/blob/main/${item.source}`;
-  const badge = item.alsoAgent ? 'агент + скил' : item.kind === 'agent' ? 'агент' : 'скил';
+  const badgeLabel = item.alsoAgent ? 'агент + скил' : item.kind === 'agent' ? 'агент' : 'скил';
+  const badgeHighlight = item.kind === 'agent' || item.alsoAgent;
+
+  const metaRows: Array<[string, string]> = [
+    ['Тип', badgeLabel],
+    ['Установка', item.install],
+    ['Исходник', item.source],
+  ];
 
   return (
-    <div className="px-6 py-10">
-      <div className="mx-auto max-w-3xl">
-        <p className="font-mono text-xs uppercase tracking-wider text-ink-dim">
-          {kind === 'skill' ? 'скил' : 'агент'} · {badge}
-        </p>
-        <h1 className="mt-2 font-display text-[clamp(22px,4vw,34px)] font-normal">
-          {item.name}
-        </h1>
+    <div className="pb-10 pt-4 md:pt-8">
+      <nav aria-label="Хлебные крошки" className="mb-2 flex flex-wrap items-center text-[14px]">
+        <a href="/" className="text-basic-400 transition-colors hover:text-info-300">
+          Каталог
+        </a>
+        <span className="mx-2 text-[11px] text-basic-800">›</span>
+        <span className="text-basic-400">{kind === 'skill' ? 'Скилы' : 'Агенты'}</span>
+        <span className="mx-2 text-[11px] text-basic-800">›</span>
+        <span className="text-basic-400">{item.name}</span>
+      </nav>
 
-        <p className="mt-3 text-ink-dim">{item.description}</p>
+      <div className="flex flex-wrap">
+        <div className="min-w-0 flex-grow basis-0 pr-0 lg:w-8/12 lg:pr-6">
+          <div className="mb-4 rounded-md bg-card p-4 lg:p-6">
+            <div className="flex flex-wrap items-center gap-2">
+              <span
+                className={
+                  badgeHighlight
+                    ? 'rounded-full bg-primary px-2 py-1 text-[12px] font-semibold text-basic-900'
+                    : 'rounded-full bg-basic-800 px-2 py-1 text-[12px] font-semibold text-basic-300'
+                }
+              >
+                {badgeLabel}
+              </span>
+              <span className="text-[12px] text-basic-400">{item.source}</span>
+            </div>
 
-        <div className="mt-6">
-          <p className="mb-2 font-mono text-xs uppercase tracking-wider text-ink-dim">
-            Установка
-          </p>
-          <InstallBlock command={item.install} />
+            <h1 className="mt-3 font-display text-[26px] font-extrabold leading-[32px] lg:text-[32px] lg:leading-[38px]">
+              {item.name}
+            </h1>
+
+            <div className="mt-4 flex aspect-[400/235] items-center justify-center overflow-hidden rounded-md bg-gradient-to-br from-[#262b33] to-[#1a1e24]">
+              <span className="font-mono text-[64px] font-semibold text-basic-400/50 lg:text-[96px]">
+                {item.id}
+              </span>
+            </div>
+          </div>
+
+          <section className="mb-4 rounded-md bg-card p-4 lg:p-6">
+            <h2 className="mb-2 w-full font-display text-[20px] font-bold leading-[26px]">
+              Описание
+            </h2>
+            <p className="text-[16px] leading-6 text-basic-300">{item.description}</p>
+          </section>
+
+          <section className="mb-4 rounded-md bg-card p-4 lg:p-6">
+            <h2 className="mb-2 w-full font-display text-[20px] font-bold leading-[26px]">
+              Параметры
+            </h2>
+            {metaRows.map(([label, value]) => (
+              <div key={label} className="param-row">
+                <span className="param-label">{label}</span>
+                <span className="param-dash" />
+                <span className="param-value">{value}</span>
+              </div>
+            ))}
+          </section>
+
+          <section className="rounded-md bg-card p-4 lg:p-6">
+            <h2 className="mb-2 w-full font-display text-[20px] font-bold leading-[26px]">
+              Содержимое SKILL.md
+            </h2>
+            <div className="markdown-body">
+              <MarkdownBody body={item.body} />
+            </div>
+          </section>
         </div>
 
-        <div className="mt-4 flex flex-wrap gap-3 font-mono text-xs text-ink-dim">
-          <a
-            href={sourceUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="text-cyan hover:underline"
-          >
-            исходник на GitHub →
-          </a>
-          <span>{item.source}</span>
-        </div>
+        <aside className="w-full lg:w-4/12">
+          <div className="rounded-md bg-card p-4 lg:sticky lg:top-8 lg:p-6">
+            <h2 className="font-display text-[22px] font-extrabold leading-[28px]">
+              {item.install.split('--skill ')[1]}
+            </h2>
+            <p className="mt-0.5 text-[14px] text-basic-400">команда установки</p>
 
-        <div className="mt-8 border-t border-white/20 pt-2">
-          <MarkdownBody body={item.body} />
-        </div>
+            <div className="mt-4">
+              <InstallBlock command={item.install} />
+            </div>
+
+            <a
+              href={sourceUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-4 block text-[14px] font-semibold text-info-300 transition-colors hover:text-info-100"
+            >
+              Исходник на GitHub →
+            </a>
+
+            <div className="mt-4 border-t border-basic-100/10 pt-4">
+              <p className="text-[12px] text-basic-400">Форматы</p>
+              <div className="mt-2 flex flex-wrap gap-2">
+                <span className="rounded-full bg-basic-800 px-2.5 py-1 text-[12px] text-basic-300">
+                  Claude Code
+                </span>
+                <span className="rounded-full bg-basic-800 px-2.5 py-1 text-[12px] text-basic-300">
+                  OpenCode
+                </span>
+                <span className="rounded-full bg-basic-800 px-2.5 py-1 text-[12px] text-basic-300">
+                  Cursor
+                </span>
+              </div>
+            </div>
+
+            <div className="mt-4 border-t border-basic-100/10 pt-4 text-[12px] leading-4 text-basic-400">
+              Устанавливается через npx skills отдельной командой на каждого агента или скила.
+            </div>
+          </div>
+        </aside>
       </div>
     </div>
   );

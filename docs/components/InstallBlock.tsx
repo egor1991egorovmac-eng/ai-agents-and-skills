@@ -11,20 +11,21 @@ export function InstallBlock({ command }: { command: string }) {
       setCopied(true);
       setTimeout(() => setCopied(false), 1600);
     } catch {
-      // clipboard недоступен — просто игнорируем
+      // clipboard недоступен — игнорируем
     }
   };
 
   return (
-    <div className="flex flex-wrap items-center gap-3 border border-white/20 bg-paper-deep px-4 py-3 font-mono text-[13.5px]">
-      <span className="text-cyan">$</span>
-      <code className="min-w-0 flex-1 overflow-x-auto whitespace-nowrap">{command}</code>
+    <div>
+      <div className="overflow-x-auto rounded-md border border-basic-100/10 bg-footer px-4 py-3 font-mono text-[13px] text-basic-300">
+        <span className="select-none text-primary">$</span> {command}
+      </div>
       <button
         type="button"
         onClick={copy}
-        className="shrink-0 border border-white/20 px-3 py-1.5 font-mono text-[11px] uppercase tracking-wider text-ink transition-colors hover:border-cyan hover:text-cyan"
+        className="mt-3 w-full rounded-md bg-primary px-[15px] py-[9px] text-[16px] font-semibold text-basic-900 transition-colors hover:bg-primary-500 active:bg-primary-300"
       >
-        {copied ? 'Скопировано' : 'Копировать'}
+        {copied ? 'Скопировано ✓' : 'Скопировать команду'}
       </button>
     </div>
   );
