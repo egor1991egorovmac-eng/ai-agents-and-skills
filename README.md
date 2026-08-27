@@ -4,6 +4,21 @@
 
 🔗 Страница: [ai-agents-and-skills.vercel.app](https://ai-agents-and-skills.vercel.app/)
 
+## Сайт
+
+Next.js (SSG, `output: export`) в корне репо: главная со списком и поиском по названию,
+у каждого агента/скила своя страница с полным текстом SKILL.md.
+
+```bash
+npm run dev     # локальная разработка
+npm run sync    # пересобрать data/registry.json из frontmatter SKILL.md
+npm run build   # SSG-сборка в out/
+```
+
+Данные сайта — `data/registry.json`, генерируется из `skills/*/SKILL.md` и `agents/*/claude-agent.md`
+(script: `scripts/sync-registry.mjs`). Новый скил = папка `skills/<name>/SKILL.md` → появится на сайте
+после `npm run sync`. Деплой на Vercel — автоматически при пуше.
+
 ## Установка через npx skills
 
 ```bash
