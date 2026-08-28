@@ -28,7 +28,7 @@ const SUMMARIES = {
   'client-types-sync-v2':
     'Этап 5: синхронизация типов клиента со схемой BFF через codegen.',
   'realt-flow':
-    'Флоу задачи целиком: сторя YouTrack → фича-ветка → таск-ветки → MR. Всю механику делают скрипты.',
+    'Флоу задачи целиком: сторя YouTrack → фича-ветка → таск-ветки → MR, плюс хотфиксы hot-fix/* прямо в master. Всю механику делают скрипты.',
 };
 
 function cleanDescription(description) {
